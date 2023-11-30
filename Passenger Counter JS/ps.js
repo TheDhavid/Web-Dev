@@ -1,16 +1,20 @@
-document.getElementById("count-el").innerHTML = 0
-
-countEl = document.getElementById("count-el")
-
+let countEl = document.getElementById("count-el")
 let count = 0
 
 function increment() {
     console.log("clicked")
-    count = count + 1
+    count += 1
     countEl.innerText = count
 }
 
+
+let saveEl = document.getElementById("save-el")
+
 function save() {
-    console.log(count)
+    let countDashSep = count + " - "
+    saveEl.textContent += countDashSep
+    // my own form of count reset. not using instructor's code
+    count = countEl.innerText - countEl.innerText
+    countEl.innerText = count
 }
 
